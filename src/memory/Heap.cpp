@@ -181,6 +181,7 @@ VMObject* Heap::AllocateObject(size_t s) {
 	entryInTable->objPtr = (omrobjectptr_t)vmo;
 //	 
    // exampleVM.objectTable->
+    }
     return vmo;
 }
 
