@@ -49,7 +49,7 @@ private:
 		//_scanPtr = (fomrobject_t *)objectPtr + 1;
 		_scanPtr = (fomrobject_t *)((char *)objectPtr  + sizeof(VMObject) -4);		//start from FIELDS[0]
 		MM_GCExtensionsBase *extensions = (MM_GCExtensionsBase *)omrVM->_gcOmrVMExtensions;
-		uintptr_t size = extensions->objectModel.getConsumedSizeInBytesWithHeader(objectPtr);
+		//uintptr_t size = extensions->objectModel.getConsumedSizeInBytesWithHeader(objectPtr);
 		//printf("zg.ObjectIterator.hpp.initialize().CP0,objectPtr=%p,size=%d\n",objectPtr,size);
 		//_endPtr = (fomrobject_t *)((U_8*)objectPtr + size);  //zg. TODO: Can not use this way. For example, VMSymbol, we can not use additional data as an reference to object.
 		_endPtr = _scanPtr + ((VMObject *)objectPtr)->GetNumberOfFields();
