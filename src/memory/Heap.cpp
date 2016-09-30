@@ -158,6 +158,7 @@ VMObject* Heap::AllocateObject(size_t s) {
 	uintptr_t size = extensions->objectModel.adjustSizeInBytes(s);
 	//
     VMObject* vmo = (VMObject*) Allocate(size);
+    if(vmo != NULL){
     vmo->SetObjectSize(s);  //zg. save the requested size.
     //TODO: How to do so? zg.add this object into the objectTable.??How to define the name of it.
 //    

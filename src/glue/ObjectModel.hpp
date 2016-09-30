@@ -37,14 +37,14 @@ class MM_GCExtensionsBase;
 #define J9_GC_OBJECT_ALIGNMENT_IN_BYTES 0x8
 //#define J9_GC_MINIMUM_OBJECT_SIZE 0x10
 //zg. For som++, vmobject is 24.
-#define J9_GC_MINIMUM_OBJECT_SIZE 32
+#define J9_GC_MINIMUM_OBJECT_SIZE 48
 
 /*
  * Define structure of object slot that is to be used to represent an object's metadata. In this slot, one byte
  * must be reserved to hold flags and object age (4 bits age, 4 bits flags). The remaining bytes in this slot may
  * be used by the client language for other purposes and will not be altered by OMR.
  */
-#define OMR_OBJECT_METADATA_SLOT_OFFSET		0 /* fomrobject_t offset from object header address to metadata slot */
+#define OMR_OBJECT_METADATA_SLOT_OFFSET		1 /* fomrobject_t offset from object header address to metadata slot */
 #define OMR_OBJECT_METADATA_SLOT_EA(object)	((fomrobject_t*)(object) + OMR_OBJECT_METADATA_SLOT_OFFSET) /* fomrobject_t* pointer to metadata slot */
 #define OMR_OBJECT_METADATA_SIZE_SHIFT		((uintptr_t) 8)
 #define OMR_OBJECT_METADATA_FLAGS_MASK		((uintptr_t) 0xFF) //zg. TODO: why it's not 0x0F?, A: it let the OMR_OBJECT_FLAGS get the whole 8 bits.

@@ -25,6 +25,7 @@ THE SOFTWARE.
   */
 
 
+#include <typeinfo>
 #include "VMObject.h"
 #include "VMClass.h"
 #include "VMSymbol.h"
@@ -45,6 +46,8 @@ VMObject::VMObject( int numberOfFields ) {
     gcfield = 0; 
 	hash = (int32_t)this;
 	this->SetClass(NULL);
+	memset(objectType,0,OTLEN);
+	strcpy(objectType,"VMObject");
     //Object size is set by the heap
 }
 

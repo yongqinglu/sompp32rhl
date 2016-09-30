@@ -40,6 +40,7 @@ VMArray::VMArray(int size, int nof) : VMObject(nof + VMArrayNumberOfFields) {
     for (int i = 0; i < size ; ++i) {
         (*this)[i] = nilObject;
     }
+    strcpy(objectType,"VMArray");
     _HEAP->EndUninterruptableAllocation();
 
 }

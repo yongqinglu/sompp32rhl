@@ -43,7 +43,7 @@ class VMSymbol;
 class VMClass;
 
 #define FIELDS ((pVMObject*)&clazz)
-
+#define OTLEN 16
 /*
  **************************VMOBJECT****************************
  * __________________________________________________________ *
@@ -85,7 +85,8 @@ public:
 
     virtual void        IncreaseGCCount() {};
     virtual void        DecreaseGCCount() {};
-
+    //virtual void setObjectType(const char * ot) {strncpy(objectType,ot,OTLEN-1); objectType[OTLEN-1]=0;}
+     char * getObjectType(){return objectType;}
     int32_t     GetHash() const { return hash; };
     int32_t     GetObjectSize() const;
 	int32_t     GetGCField() const;
@@ -127,6 +128,7 @@ protected:
     int32_t     objectSize; //set by the heap at allocation time
     int32_t     numberOfFields;
     int32_t     gcfield;
+    char objectType[OTLEN];
 
     //pVMObject* FIELDS;
     //Start of fields. All members beyond this point are indexable 

@@ -53,7 +53,7 @@ VMPrimitive::VMPrimitive(pVMSymbol signature) : VMInvokable(VMPrimitiveNumberOfF
     this->SetSignature(signature);
     this->routine = NULL;
     this->empty = false;
-
+    strcpy(objectType,"VMPrim");
     _HEAP->EndUninterruptableAllocation();
 }
 

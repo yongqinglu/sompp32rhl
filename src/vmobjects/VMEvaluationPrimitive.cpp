@@ -45,6 +45,7 @@ VMEvaluationPrimitive::VMEvaluationPrimitive(int argc) :
                                &VMEvaluationPrimitive::evaluationRoutine));
     this->SetEmpty(false);
     this->numberOfArguments = _UNIVERSE->NewInteger(argc);
+    strcpy(objectType,"VMEvalPrim");
     _HEAP->EndUninterruptableAllocation();
 }
 

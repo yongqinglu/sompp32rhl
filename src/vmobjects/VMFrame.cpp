@@ -66,6 +66,7 @@ VMFrame::VMFrame(int size, int nof) : VMArray(size,
     this->localOffset = _UNIVERSE->NewInteger(0);
     this->bytecodeIndex = _UNIVERSE->NewInteger(0);
     this->stackPointer = _UNIVERSE->NewInteger(0);
+    strcpy(objectType,"VMFrame");
     _HEAP->EndUninterruptableAllocation();
 }
 

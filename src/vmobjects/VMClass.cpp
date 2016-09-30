@@ -64,10 +64,12 @@ THE SOFTWARE.
 const int VMClass::VMClassNumberOfFields = 4; 
 
 VMClass::VMClass() : VMObject(VMClassNumberOfFields) {
+	 strcpy(objectType,"VMClass");
 }
 
 
 VMClass::VMClass( int numberOfFields ) : VMObject(numberOfFields + VMClassNumberOfFields) {
+	 strcpy(objectType,"VMClass");
 }
 
 

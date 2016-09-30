@@ -34,6 +34,7 @@ LDFLAGS		=-m32 $(LIBRARIES)
 
 CFLAGS +=-DUT_DIRECT_TRACE_REGISTRATION
 CFLAGS +=-I${SRC_DIR}/glue
+CFLAGS +=-I${SRC_DIR}/vmobjects
 CFLAGS +=-I${DIR_OMR}/include_core
 CFLAGS +=-I${DIR_OMR}/gc/include
 CFLAGS +=-I${DIR_OMR}/gc/base
@@ -43,6 +44,7 @@ CFLAGS +=-I${DIR_OMR}/gc/stats
 CFLAGS +=-I${DIR_OMR}/gc/structs
 CFLAGS +=-I${DIR_OMR}/gc/base/standard
 CFLAGS +=-I${DIR_OMR}/gc/startup
+
 
 #OMR_LIBS = -L. -L${DIR_OMR} -L${DIR_OMR}/lib -Xlinker --start-group -lomrglue -lj9omr 
 OMR_LIBS =-L. -L${DIR_OMR} -L${DIR_OMR}/lib -Xlinker --start-group -lj9omr \
